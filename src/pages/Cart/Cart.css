@@ -36,3 +36,14 @@
 		width: calc(100% - 40px);
 	}
 }
+
+.btn-back {
+	background: #6096b4;
+	margin-top: 10px;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 5px;
+	padding: 8px 30px;
+	border: none;
+	width: 100%;
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import './CartItem.css'
 
 function CartItem({id, image, title, price, quantity = 0}) {
 	return (
