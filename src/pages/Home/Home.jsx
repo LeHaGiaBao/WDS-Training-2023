@@ -4,9 +4,19 @@ import {data} from '../../data/data'
 import ProductItem from '../../components/ProductItem/ProductItem'
 import {MdShoppingCart} from 'react-icons/md'
 import {useNavigate} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 function Home() {
 	const nav = useNavigate()
+
+	const cart = useSelector((state) => state.cart)
+	const getTotalQuantity = () => {
+		let total = 0
+		cart.forEach((item) => {
+			total += item.quantity
+		})
+		return total
+	}
 
 	return (
 		<div className='home'>
@@ -24,7 +34,7 @@ function Home() {
 			</div>
 			<div className='shopping-cart' onClick={() => nav('/cart')}>
 				<MdShoppingCart id='cartIcon' />
-				<p>0</p>
+				<p>{getTotalQuantity() || 0}</p>
 			</div>
 		</div>
 	)
